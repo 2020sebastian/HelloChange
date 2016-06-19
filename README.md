@@ -1,6 +1,6 @@
 # HelloChange
 
-Description:
+**`Description:`**
 Mock cash register which accepts bills of the following denominations: $20, $10, $5, $2, $1
 
 Runnable via command line, interacts with user via commands like:
