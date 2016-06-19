@@ -24,6 +24,11 @@ public class CashDrawer {
     private int ones;
 
     public CashDrawer(int twenties, int tens, int fives, int twos, int ones) {
+
+        if (twenties < 0 || tens < 0 || fives < 0 || twos < 0 || ones < 0){
+            System.out.println("Invalid input. Please provide positive numbers");
+        }
+
         this.twenties = twenties;
         this.tens = tens;
         this.fives = fives;
