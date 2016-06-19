@@ -1,11 +1,11 @@
-*.class
-.idea
-.iml
+# Intellij
+.idea/
+*.iml
+*.iws
 
+# Mac
+.DS_Store
 
-# Package Files #
-*.jar
-*.war
-*.ear
-
-hs_err_pid*
+# Maven
+log/
+target/
