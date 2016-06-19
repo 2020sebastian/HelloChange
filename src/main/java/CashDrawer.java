@@ -10,6 +10,11 @@ import java.util.List;
  */
 public class CashDrawer {
 
+    public static final int TWENTY = 0;
+    public static final int TEN = 1;
+    public static final int FIVE = 2;
+    public static final int TWO = 3;
+    public static final int ONE = 4;
     private OptimalChangeAlgorithm algo = new OptimalChangeAlgo1();
 
     private int twenties;
@@ -31,23 +36,22 @@ public class CashDrawer {
             System.out.println("Invalid input. Please type \"help\" for correct usage.");
             return;
         }
-        twenties = Util.add(twenties, bills.get(0));
-        tens = Util.add(tens, bills.get(1));
-        fives = Util.add(fives, bills.get(2));
-        twos = Util.add(twos, bills.get(3));
-        ones = Util.add(ones, bills.get(4));
+        twenties = Util.add(twenties, bills.get(TWENTY));
+        tens = Util.add(tens, bills.get(TEN));
+        fives = Util.add(fives, bills.get(FIVE));
+        twos = Util.add(twos, bills.get(TWO));
+        ones = Util.add(ones, bills.get(ONE));
     }
 
     public void take(List<Integer> bills) {
-        twenties = Util.subtract(twenties, bills.get(0));
-        tens = Util.subtract(tens, bills.get(1));
-        fives = Util.subtract(fives, bills.get(2));
-        twos = Util.subtract(twos, bills.get(3));
-        ones = Util.subtract(ones, bills.get(4));
+        twenties = Util.subtract(twenties, bills.get(TWENTY));
+        tens = Util.subtract(tens, bills.get(TEN));
+        fives = Util.subtract(fives, bills.get(FIVE));
+        twos = Util.subtract(twos, bills.get(TWO));
+        ones = Util.subtract(ones, bills.get(ONE));
     }
 
-    public void change(List<Integer> integers) {
-        int amount = integers.get(0);
+    public void change(Integer amount) {
 
         List<Integer> optimalChange = algo.getOptimalChange(amount, getCurrentBills());
 
@@ -58,7 +62,6 @@ public class CashDrawer {
             printOptimalChange(optimalChange);
             take(optimalChange);
         }
-
     }
 
     private int total() {

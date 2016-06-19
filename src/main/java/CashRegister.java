@@ -63,7 +63,11 @@ public class CashRegister {
 
                 case "change":
                     List<Integer> changeBills = Util.convertToInts(input);
-                    cashDrawer.change(changeBills);
+                    if (changeBills.size() != 1) {
+                        System.out.println("Invalid input. Please type \"help\" for correct usage.");
+                        break;
+                    }
+                    cashDrawer.change(changeBills.get(0));
                     break;
 
                 case "help":
