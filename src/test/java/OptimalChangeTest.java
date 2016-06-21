@@ -67,6 +67,13 @@ public class OptimalChangeTest {
         List<Integer> optimalChange = algo.getOptimalChange(3, cashDrawer.getCurrentBills());
         Assert.assertEquals(null, optimalChange);
     }
+    @Test
+    public void testOptimalChange6() throws Exception {
+        CashDrawer cashDrawer = new CashDrawer(1, 0, 3, 4, 0);
+        List<Integer> optimalChange = algo.getOptimalChange(8, cashDrawer.getCurrentBills());
+        List<Integer> expected = Arrays.asList(0, 0, 0, 4, 0);
+        Assert.assertEquals(expected, optimalChange);
+    }
 
     @Test
     public void testOptimalChangeRand3() throws Exception {
